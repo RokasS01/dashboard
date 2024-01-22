@@ -1,0 +1,773 @@
+.blocks {
+    margin-top: 50px;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.blocks .block {
+    position: relative; /* Ajout de la position relative */
+    width: 31%;
+    height: 300px;
+    background-color: var(--box3-color);
+    border-radius: 9px;
+    color: var(--text-color);
+    overflow: hidden;
+}
+
+.blocks .block h1 {
+    position: relative;
+    top: 10px;
+    left: 10px;
+    font-size: 9px;
+    z-index: 5;
+    font-weight: 500;
+}
+
+.blocks .block h2 {
+    display: flex;
+    justify-content: center;
+    margin-top: 75px;
+    font-size: 50px;
+    font-weight: 700;
+    z-index: 5;
+}
+
+.blocks .block p {
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: 500;
+    z-index: 5;
+}
+
+.blocks .block .wave {
+    position: absolute; /* Changement de position en absolute */
+    bottom: -10px; /* Positionnement au bas */
+    left: 0; /* Vous pouvez ajuster la position horizontale selon vos besoins */
+    width: 100%;
+    z-index: 3;
+    opacity: .9;
+}
+
+.blocks .block .pos{
+    color: #4CAF50;
+    z-index: 5;    
+}
+
+.blocks .block .neg{
+    color: #D32F2F;    
+    z-index: 5;
+}
+
+.blocks .block .null{
+    color: grey;    
+    z-index: 5;
+}
+
+.canvas {
+    width: 100%;
+    height: 300px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.courbeCompte {
+    width: 55%; /* Définissez la largeur souhaitée */
+    height: 100%;
+    background-color: var(--box3-color);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 30px;
+}
+
+/* Le canvas doit remplir toute la div */
+.courbeCompte canvas {
+    width: 70%;
+}
+
+.donutCompte {
+    width: 20%;
+    height: 100%;
+    background-color: var(--box3-color);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    padding: 30px;
+}
+
+.traitCompte {
+    width: 20%;
+    height: 100%;
+    padding: 30px;
+    background-color: var(--box3-color);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.canvas div {
+    position: relative;
+}
+
+.canvas div h1 {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 9px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+
+.tableau {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--box3-color);
+    border-radius: 9px;
+    padding: 20px;
+}
+
+.tableau .tableau-data{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.tableau-data .data{
+    display: flex;
+    flex-direction: column;
+    margin: 0 30px;
+}
+.tableau-data .data-title{
+    font-size: 20px;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.tableau-data .data .data-list{
+    font-size: 18px;
+    font-weight: 400;
+    margin-top: 20px;
+    white-space: nowrap;
+    color: var(--text-color);
+}
+
+body.dark .tableau-data::-webkit-scrollbar-thumb:hover{
+    background: #3A3B3C;
+}
+
+.tableau .tableau-data div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tableau .tableau-data .supprimer .data-list {
+    color: #D32F2F;
+    text-align: center;
+    border: 1px solid #D32F2F;
+    border-radius: 5px;
+    transition: 0.1s ease-in-out;
+    width: 30px;
+}
+
+.tableau .tableau-data .ajouter .data-list {
+    color: #4CAF50;
+    text-align: center;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    transition: 0.1s ease-in-out;
+    width: 30px;
+}
+
+.tableau .tableau-data .supprimer .data-list:hover {
+    background-color: hsl(0, 65%, 51%, .1);
+    cursor: pointer;
+}
+
+.tableau .tableau-data .ajouter .data-list:hover {
+    background-color: hsl(122, 100%, 79%,.1);
+    cursor: pointer;
+}
+
+.tableau .tableau-data .pourcentage .pos{
+    color: #4CAF50;
+}
+
+.tableau .tableau-data .pourcentage .neg{
+    color: #D32F2F;
+}
+
+.tableau .tableau-data .pourcentage .null{
+    color: #808080;
+}
+
+.tableau .tableau-data .inactif .in button {
+    color: #FFD700;
+    background: none;
+    border: 1px solid #FFD700;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    transition: 0.1s ease-in-out;
+}
+
+.tableau .tableau-data .inactif .ac button{
+    color: #4CAF50;
+    background: none;
+    border: 1px solid #4CAF50;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 12px;
+    text-align: center;
+    transition: 0.1s ease-in-out;
+}
+
+.tableau .tableau-data .in button:hover {
+    background: hsl(51, 100%, 50%,.1);
+    cursor: pointer;
+}
+
+.tableau .tableau-data .ac button:hover {
+    background: hsl(122, 39%, 49%, .1);
+    cursor: pointer;
+}
+
+@media (max-width: 1500px) {
+    .tableau .tableau-data{
+        overflow-X: scroll;
+    }
+}
+
+@media (max-width: 1120px) {
+    .canvas {
+        height: 1000px;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .courbeCompte {
+        width: 90%;
+    }
+
+    .courbeCompte canvas {
+        width: 70%;
+    }
+
+    .donutCompte {
+        width: 90%;
+        margin-top: 20px;
+    }
+    
+    .traitCompte {
+        width: 90%;
+        margin-top: 20px;
+    }
+
+}
+
+@media (max-width: 1004px) {
+    
+    .blocks {
+        margin-top: 0px;
+    }
+
+    .blocks .block {
+        height: 200px;
+    }
+    
+    
+    .blocks .block h2 {
+        margin-top: 65px;
+        font-size: 30px;
+    }
+    
+    .blocks .block p {
+        display: none;
+    }
+}
+
+@media (max-width: 775px) {
+    
+    .canvas {
+        margin-top: -20px;
+    }
+
+    .blocks {
+        margin-top: -50px;
+    }
+
+    .blocks .block {
+        height: 150px;
+    }
+    
+    
+    .blocks .block h2 {
+        font-size: 20px;
+        margin-top: 50px;
+    }
+}
+
+@media (max-width: 600px) {
+    
+    .canvas {
+        margin-top: 20px;
+    }
+
+    .blocks {
+        margin-top: 30px;
+        width: 100%;
+        height: 930px;
+        flex-direction: column;
+    }
+    
+    .blocks .block {
+        width: 90%;
+        height: 300px;
+    }
+    
+    .blocks .block h2 {
+        margin-top: 80px;
+        font-size: 40px;
+    }
+    
+    .blocks .block p {
+        display: flex;
+        justify-content: center;
+        font-size: 10px;
+        font-weight: 500;
+        z-index: 5;
+    }
+    
+    .blocks .block .wave {
+        position: absolute; /* Changement de position en absolute */
+        bottom: -10px; /* Positionnement au bas */
+        left: 0; /* Vous pouvez ajuster la position horizontale selon vos besoins */
+        width: 100%;
+        z-index: 3;
+        opacity: .9;
+    }
+}
+
+@media (max-width: 530px) {
+
+    .canvas {
+        height: 600px;
+    }
+
+    .courbeCompte canvas {
+        width: 60%;
+    }
+
+    .courbeCompte {
+        display: none;
+    }
+    .traitCompte {
+        height: 300px;
+    }
+    .donutCompte {
+        height: 300px;
+    }
+    .blocks {
+        margin-top: 30px;
+        width: 100%;
+        height: 630px;
+        flex-direction: column;
+    }
+    .blocks .block h2 {
+        margin-top: 50px;
+        font-size: 40px;
+    }
+    .blocks .block p {
+        display: none;
+    }
+    .blocks .block {
+        width: 90%;
+        height: 200px;
+    }
+}
+
+.back {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background-color: rgba(0, 0, 0,.6);
+    z-index: 100;
+    display: none;
+}
+
+.page-suppr {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--nav-color);
+    width: 90%; /* Utilisation de 90% de la largeur de l'écran */
+    max-width: 340px; /* Largeur maximale pour limiter la taille sur de plus grands écrans */
+    height: 200px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+}
+  
+  
+.page-suppr h1{
+    font-size: 18px;
+    color: var(--toggle-color);
+    
+}
+
+.page-suppr p {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.page-suppr .button {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.1 ease-in-out;
+}
+
+.page-suppr .button button {
+    width: 40%;
+    height: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.1 ease-in-out;
+}
+
+.page-suppr .button .cancelButton {
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+}
+
+.page-suppr .button .confirmButton {
+    background-color: var(--toggle-color);
+    color: #E0E0E0;
+    border: none;
+    border-radius: 5px;
+}
+
+.page-inactif, .page-update {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--nav-color);
+    width: 90%; /* Utilisation de 90% de la largeur de l'écran */
+    max-width: 340px; /* Largeur maximale pour limiter la taille sur de plus grands écrans */
+    height: 200px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+}
+  
+  
+.page-inactif h1, .page-update h1{
+    font-size: 18px;
+    color: var(--toggle-color);
+    
+}
+
+.page-inactif p, .page-update p {
+    text-align: center;
+    font-size: 12px;
+    color: var(--text-color);
+}
+
+.page-inactif .button, .page-update .button {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.1 ease-in-out;
+}
+
+.page-inactif .button button, .page-update .button button{
+    width: 40%;
+    height: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.1 ease-in-out;
+}
+
+.page-inactif .button .cancelButton, .page-update .button .cancelButton {
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+}
+
+.page-inactif .button .confirmButton, .page-update .button .confirmButton {
+    background-color: var(--toggle-color);
+    color: #E0E0E0;
+    border: none;
+    border-radius: 5px;
+}
+
+.page-ajouter {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--nav-color);
+    width: 90%; /* Utilisation de 90% de la largeur de l'écran */
+    max-width: 340px; /* Largeur maximale pour limiter la taille sur de plus grands écrans */
+    height: 275px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+  
+.page-ajouter form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+  
+.page-ajouter form .fusion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 40%;
+
+}
+  
+.page-ajouter h1{
+    font-size: 18px;
+    color: var(--toggle-color);  
+}
+
+.page-ajouter form .fusion h2 {
+    font-size: 12px;
+    color: var(--text-color);
+    margin-bottom: -20px;
+    margin-left: -100px;
+}
+
+.page-ajouter form p {
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-color);
+}
+
+.page-ajouter form .button {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.1 ease-in-out;
+}
+
+.page-ajouter form .button button {
+    width: 40%;
+    height: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.1 ease-in-out;
+}
+
+.page-ajouter form .button .cancelButton {
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+}
+
+.page-ajouter form .button .confirmButton {
+    background-color: var(--toggle-color);
+    color: #E0E0E0;
+    border: none;
+    border-radius: 5px;
+}
+
+.search-box{
+    position: relative;
+    height: 30px;
+    max-width: 200px;
+    width: 100%;
+    left: 0%;
+    transform: translateX(-50%);
+}
+.search-box input{
+    position: absolute;
+    border: 1px solid var(--border-color);
+    background-color: var(--panel-color);
+    padding: 0 25px 0 50px;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    color: var(--text-color);
+    font-size: 10px;
+    font-weight: 400;
+    outline: none;
+}
+.search-box i{
+    position: absolute;
+    left: 115px;
+    font-size: 15px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--black-light-color);
+}
+
+.create {
+    margin-top: 30px;
+}
+
+.create button {
+    width: 70px;
+    height: 35px;
+    background: var(--toggle-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: #E0E0E0;
+    margin-bottom: 10px;
+}
+
+.page-argent {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--nav-color);
+    width: 90%; /* Utilisation de 90% de la largeur de l'écran */
+    max-width: 340px; /* Largeur maximale pour limiter la taille sur de plus grands écrans */
+    height: 300px;
+    border-radius: 9px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    z-index: 10;
+    padding: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    display: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+  
+.page-argent form {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+}
+  
+.page-argent h1{
+    font-size: 18px;
+    color: var(--toggle-color);  
+}
+
+.page-argent h2 {
+    font-size: 12px;
+    color: var(--text-color);
+    margin-bottom: -20px;
+    margin-left: -100px;
+}
+
+.page-argent form p {
+    text-align: center;
+    font-size: 10px;
+    color: var(--text-color);
+}
+
+.page-argent form .button {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    transition: 0.2 ease-in-out;
+}
+
+.page-argent form .button button {
+    width: 40%;
+    height: 30px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2 ease-in-out;
+}
+
+.page-argent form .button .cancelButton {
+    color: #000000;
+    border: none;
+    border-radius: 5px;
+}
+
+.page-argent form .button .confirmButton {
+    background-color: var(--toggle-color);
+    color: #f7f7f7;
+    border: none;
+    border-radius: 5px;
+}
+
+.tableau .tableau-data .supprimer .openModalSupprBlocked {
+    color: #727272;
+    text-align: center;
+    border: 1px solid #727272;
+    border-radius: 5px;
+    transition: 0.1s ease-in-out;
+    width: 30px;
+}
+
+.tableau .tableau-data .supprimer .openModalSupprBlocked:hover {
+    background-color: hsl(0, 0%, 45%,.2);
+}
+
+.fonds span {
+    transition: .3s ease-in-out;
+}
+
+.fonds span:hover {
+    cursor: pointer;
+    color: #fff1a0;
+}
